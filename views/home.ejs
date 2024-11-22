@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+</head>
+<%- include('./partials/nav') %>
+<body>
+  <h1><%= locals.restaurant.name %></h1>
+  <!-- The <%= %> tags tell EJS to output the value -->
+<!-- locals.restaurant.name accesses the 'name' property from my data -->
+
+<!-- Shows the address -->
+  <p>Address: <%= locals.restaurant.address %></p>
+  <!-- Shows the phone number -->
+<p>Phone: <%= locals.restaurant.phone %></p>
+<!-- Shows if restaurant is open or closed using a ternary operator -->
+<p>Status: <%= locals.restaurant.isOpen ? 'Open' : 'Closed' %></p>
+<!-- If isOpen is true, shows 'Open', otherwise shows 'Closed' -->
+</body>
+</html>
+<p></p>
+
+ <!-- more notes 
+learned today that toFixed(2) is a javascript method that 
+formats number to have exactly 2 decimal places 
+toFixed(0) -> no decimal places
+toFixed(1) -> one decimal place
+toFixed(2) -> two decimal places
+toFixed(3) -> three decimal places
+The .repeat() method in JavaScript repeats a string a specified number of times.
+learned that it is better to use locals.restaurant instead of 
+restaurant because locals.restaurant makes it explicit that we're accessing variables passed from our server
+compared to just restaurant if it is not define it could make the program crash
+
+as well i learned about ternary operator they are just shorter versions of if statements. -->
+
+<!-- <p>Status: <%= locals.restaurant.isOpen ? 'Open' : 'Closed' %></p>
+
+ This is the same as writing:
+<% if(locals.restaurant.isOpen === true) { %>
+    <p>Status: Open</p>
+<% } else { %>
+    <p>Status: Closed</p>
+<% } %> -->
+
+<!--  Example 1
+let age = 20;
+let canDrive = age >= 16 ? 'Yes' : 'No';
+ If age is 16 or more, canDrive = 'Yes', otherwise 'No'
+
+ Example 2
+let score = 85;
+let result = score >= 70 ? 'Pass' : 'Fail';
+ If score is 70 or more, result = 'Pass', otherwise 'Fail'
+
+ Example 3
+let time = 13;
+let greeting = time < 12 ? 'Good Morning' : 'Good Afternoon';
+ If time is less than 12, greeting = 'Good Morning', otherwise 'Good Afternoon'
+
+The line <%- include('./partials/nav') %> is an EJS include statement that brings in content from a separate file. is line is:
+
+Looking for a file called nav.ejs inside a folder called partials
+Taking all the content from that file
+Inserting it where this line is placed

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu</title>
+</head>
+<%- include('./partials/nav') %>
+<body>
+  
+  <h2>Mains</h2>
+  <ul>
+    <% groupedItems.mains.forEach(item => { %>
+      <li>
+        <strong><%= item.name %></strong><br>
+        Price: $<%= item.price %><br>
+        Details: <%= item.details %><br>
+        Rating:  <%= '⭐'.repeat(item.rating) %>
+      </li>
+    <% }); %>
+  </ul>
+
+  <h2>Sides</h2>
+  <ul>
+    <% groupedItems.sides.forEach(item => { %>
+      <li>
+        <strong><%= item.name %></strong><br>
+        Price: $<%= item.price %><br>
+        Details: <%= item.details %><br>
+        Rating:  <%= '⭐'.repeat(item.rating) %>
+      </li>
+    <% }); %>
+  </ul>
+
+  <h2>Desserts</h2>
+  <ul>
+    <% groupedItems.desserts.forEach(item => { %>
+      <li>
+        <strong><%= item.name %></strong><br>
+        Price: $<%= item.price %><br>
+        Details: <%= item.details %><br>
+        Rating:  <%= '⭐'.repeat(item.rating) %>
+      </li>
+    <% }); %>
+  </ul>
+
+
+</body>
+</html>
